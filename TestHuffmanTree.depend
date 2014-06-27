@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1403393653 source:/home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/ZipTable.cpp
+	"ZipTable.h"
+	<iostream>
+	<vector>
+	<fstream>
+	<ctype.h>
+
+1403393682 /home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/ZipTable.h
+
+1403646980 source:/home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/HuffmanTree.cpp
+	"HuffmanTree.h"
+	<iostream>
+	<sstream>
+
+1403647010 /home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/HuffmanTree.h
+	"ZipTable.h"
+	<string>
+

@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1403648157 source:/home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/HuffmanTree.cpp
+	"HuffmanTree.h"
+	<iostream>
+	<sstream>
+
+1403648157 /home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/HuffmanTree.h
+	"ZipTable.h"
+	<string>
+
+1403393682 /home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/ZipTable.h
+
+1403649327 source:/home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/PriorityQueue.cpp
+	"PriorityQueue.h"
+	<iostream>
+	<sstream>
+
+1403648566 /home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/PriorityQueue.h
+	"HuffmanTree.h"
+	<string>
+
+1403393653 source:/home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/ZipTable.cpp
+	"ZipTable.h"
+	<iostream>
+	<vector>
+	<fstream>
+	<ctype.h>
+
+1403650775 source:/home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/TestPriorityQueue.cpp
+	"PriorityQueue.h"
+	<iostream>
+	<sstream>
+	<assert.h>
+	<stdlib.h>
+
