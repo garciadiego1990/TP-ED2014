@@ -21,6 +21,7 @@ struct CharBagStr
     List elems;
 };
 
+
 CharBag emptyCharBag(int n)
 {
     CharBag cb = new CharBagStr;
@@ -35,6 +36,7 @@ CharBag emptyCharBag(int n)
 
     return cb;
 }
+
 
 void deleteCharBag(CharBag& b)
 {
@@ -60,10 +62,12 @@ void add(CharBag& b, char c)
     }
 }
 
+
 int get(CharBag& b, char c)
 {
     return b->ocurrencias[(int)(unsigned char)c];
 }
+
 
 struct CharBagIteratorStr
 {
@@ -71,6 +75,7 @@ struct CharBagIteratorStr
 
     ListIterator iteratorL;
 };
+
 
 CharBagIterator iterate(CharBag b)
 {
@@ -81,25 +86,30 @@ CharBagIterator iterate(CharBag b)
     return it;
 }
 
+
 void deleteCharBagIterator(CharBagIterator& it)
 {
     delete it;
 }
+
 
 bool valid(CharBagIterator it)
 {
     return isValid(it->iteratorL);
 }
 
+
 void next(CharBagIterator it)
 {
     it->iteratorL = next(it->iteratorL);
 }
 
+
 char currentChar(CharBagIterator it)
 {
     return getCurrentElement(it->iteratorL);
 }
+
 
 int currentCount(CharBagIterator it)
 {
@@ -110,16 +120,14 @@ int currentCount(CharBagIterator it)
 string toString(CharBag c)
 {
     stringstream sout;
-	sout << "[ ";
-	CharBagIterator it;
+    sout << "[ ";
+    CharBagIterator it;
 
-	for(it = iterate(c); valid(it); next(it))
-	{
+    for(it = iterate(c); valid(it); next(it))
+    {
         sout << "'" << currentChar(it) << "'," << currentCount(it) << " ";
     }
     sout << "]";
     deleteCharBagIterator(it);
     return sout.str();
 }
-
-

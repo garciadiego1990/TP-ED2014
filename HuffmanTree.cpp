@@ -17,6 +17,7 @@ struct HuffmanTreeStr
     HuffmanTree der;
 };
 
+
 HuffmanTree leaf(char c, int w)
 {
     HuffmanTree hf = new HuffmanTreeStr;
@@ -29,6 +30,7 @@ HuffmanTree leaf(char c, int w)
     return hf;
 }
 
+
 HuffmanTree binary(HuffmanTree a, HuffmanTree b)
 {
     HuffmanTree hf = new HuffmanTreeStr;
@@ -40,6 +42,7 @@ HuffmanTree binary(HuffmanTree a, HuffmanTree b)
     return hf;
 }
 
+
 void deleteHuffmanTree(HuffmanTree& t)
 {
     if(t->izq != NULL)
@@ -50,15 +53,19 @@ void deleteHuffmanTree(HuffmanTree& t)
     delete t;
 }
 
+
 int weight(HuffmanTree t)
 {
     return t->peso;
 }
+
+
 // Esta función devuelve verdadero si el HuffmanTree pasado por referencia es una hoja
 bool isLeaf(HuffmanTree &t)
 {
     return (t->izq == NULL && t->der == NULL);
 }
+
 
 // Recorre el HuffmanTree, y cada vez que llega a una hoja agrega el bitChain correspondiente en el zipTable
 void recorrerHuffmanTree(HuffmanTree &t, BitChain &bc, ZipTable &zp)
@@ -77,7 +84,6 @@ void recorrerHuffmanTree(HuffmanTree &t, BitChain &bc, ZipTable &zp)
         recorrerHuffmanTree(t->der,bc,zp);
         remove(bc);
     }
-
 }
 
 
@@ -101,9 +107,9 @@ ZipTable buildTable(HuffmanTree t)
     return zp;
 }
 
+
 void recorrerEimprimir(HuffmanTree t, stringstream &sout)
 {
-
     if(isLeaf(t))
     {
         sout << t->c;
@@ -113,7 +119,6 @@ void recorrerEimprimir(HuffmanTree t, stringstream &sout)
         recorrerEimprimir(t->izq,sout);
         recorrerEimprimir(t->der,sout);
     }
-
 }
 
 

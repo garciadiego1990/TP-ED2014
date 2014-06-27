@@ -12,17 +12,15 @@ using namespace std;
 // -- El size es mayor o igual a 0
 // -- El size es menor o igual al maxSize
 // -- El priority queue se va llenando de izquierda a derecha
-// -- Para todo 1 <= i <= size:
-// --       elems[0] <= elems[i] (el centinela es el elemento con el peso mas chico de todos)
-// --       si 2i <= size, elems[i] <= elems[2i] (todo nodo tiene un peso menor o igual al de su hijo izquierdo)
-// --       si 2i+1 <= size, elems[i] <= elems[2i+1] (todo nodo tiene un peso menor o igual al de su hijo derecho)
+// -- El centinela es el elemento con el peso mas chico de todos
+// -- Todo nodo tiene un peso menor o igual al de su hijo izquierdo
+// -- Todo nodo tiene un peso menor o igual al de su hijo derecho
 
 struct PriorityQueueStr
 {
     int size;
     ELEM_TYPE* elems;
 };
-
 
 
 PriorityQueue emptyPriorityQueue()
@@ -33,7 +31,6 @@ PriorityQueue emptyPriorityQueue()
     pq->elems[0] = minData; //centinela
     return pq;
 }
-
 
 
 void deletePriorityQueue(PriorityQueue& q)
@@ -49,15 +46,18 @@ void deletePriorityQueue(PriorityQueue& q)
     delete q;
 }
 
+
 int size(PriorityQueue q)
 {
     return q->size;
 }
 
+
 bool isFull(PriorityQueue& q)
 {
     return (q->size == maxSize);
 }
+
 
 void enqueue(PriorityQueue& q, HuffmanTree t)
 {
@@ -78,14 +78,15 @@ void enqueue(PriorityQueue& q, HuffmanTree t)
     }
 }
 
+
 bool isEmpty(PriorityQueue& q)
 {
     return (q->size == 0);
 }
 
+
 HuffmanTree dequeue(PriorityQueue& q)
 {
-
     if(isEmpty(q))
     {
         cout << "El PriorityQueue esta vacio" << endl;
@@ -121,6 +122,8 @@ HuffmanTree dequeue(PriorityQueue& q)
         return minElem;
     }
 }
+
+
 string toString(PriorityQueue q)
  {
     stringstream sout;
@@ -132,4 +135,3 @@ string toString(PriorityQueue q)
     sout << "]";
     return sout.str();
 }
-

@@ -6,11 +6,13 @@ struct listNode
     listNode* next;
 };
 
+
 struct ListStr
 {
     listNode* first;
     listNode* last;
 };
+
 
 List emptyList()
 {
@@ -27,6 +29,7 @@ bool isEmptyList(List l)
 {
     return (l->first == NULL);
 }
+
 
 void pushBack(List &l, ELEM_TYPE elem)
 {
@@ -45,6 +48,7 @@ void pushBack(List &l, ELEM_TYPE elem)
         l->last = newNode;
     }
 }
+
 
 void destroyList(List &l)
 {
@@ -65,18 +69,20 @@ ListIterator createIterator(List &l)
     return l->first;
 }
 
+
 bool isValid(ListIterator l)
 {
     return (l != NULL);
 }
+
 
 ELEM_TYPE getCurrentElement(ListIterator l)
 {
     return l->elem;
 }
 
+
 ListIterator next(ListIterator &l)
 {
     return l->next;
 }
-
