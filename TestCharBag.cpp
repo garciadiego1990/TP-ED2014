@@ -6,12 +6,14 @@
 
 using namespace std;
 
-void check(CharBag c, string r) {
-	string ls = toString(c);
-	if (ls != r) {
-		cout << "ERROR: " << ls << " != " << r << endl;
-		exit(1);
-	}
+void check(CharBag c, string r)
+{
+    string ls = toString(c);
+    if (ls != r)
+    {
+        cout << "ERROR: " << ls << " != " << r << endl;
+        exit(1);
+    }
 }
 
 void testEmptyCharBag()
@@ -98,7 +100,7 @@ void testCurrentChar()
     deleteCharBagIterator(it);
     deleteCharBag(cb);
 
-     cout << "testCurrentChar - OK" << endl;
+    cout << "testCurrentChar - OK" << endl;
 
 }
 
@@ -122,7 +124,115 @@ void testCurrentCount()
     deleteCharBagIterator(it);
     deleteCharBag(cb);
 
-     cout << "testCurrentCount - OK" << endl;
+    cout << "testCurrentCount - OK" << endl;
+}
+
+
+void testRemove()
+{
+    CharBag cb = emptyCharBag(40);
+    check(cb,"[ ]");
+    assert(get(cb,'a')==0);
+
+    remove(cb,'a');
+    check(cb,"[ ]");
+    assert(get(cb,'a')==0);
+
+    add(cb, 'a');
+    check(cb,"[ 'a',1 ]");
+    assert(get(cb,'a')==1);
+
+    remove(cb,'a');
+    assert(get(cb,'a')==0);
+    check(cb,"[ ]");
+
+    add(cb, 'b');
+    add(cb, 'b');
+    check(cb,"[ 'b',2 ]");
+    assert(get(cb,'b')==2);
+    assert(get(cb,'a')==0);
+
+    remove(cb,'b');
+    assert(get(cb,'b')==1);
+    assert(get(cb,'a')==0);
+    check(cb,"[ 'b',1 ]");
+
+    add(cb, 'a');
+    assert(get(cb,'a')==1);
+    check(cb,"[ 'b',1 'a',1 ]");
+    assert(get(cb,'b')==1);
+    assert(get(cb,'a')==1);
+
+    remove(cb,'a');
+    assert(get(cb,'b')==1);
+    assert(get(cb,'a')==0);
+    check(cb,"[ 'b',1 ]");
+
+
+    add(cb, 'a');
+
+    check(cb,"[ 'b',1 'a',1 ]");
+
+    remove(cb,'b');
+    assert(get(cb,'a')==1);
+    assert(get(cb,'b')==0);
+    check(cb,"[ 'a',1 ]");
+
+    deleteCharBag(cb);
+
+
+    cout << "testRemove - OK" << endl;
+}
+
+void testRemoveCurrent()
+{
+    CharBag cb = emptyCharBag(5);
+    CharBagIterator it = iterate(cb);
+    removeCurrent(it);
+
+    check(cb,"[ ]");
+
+    add(cb, 'a');
+    deleteCharBagIterator(it);
+    it = iterate(cb);
+    removeCurrent(it);
+
+    assert(get(cb,'a')==0);
+    check(cb,"[ ]");
+
+    add(cb, 'b');
+    add(cb, 'b');
+    deleteCharBagIterator(it);
+    it = iterate(cb);
+    removeCurrent(it);
+    assert(currentCount(it)==1);
+
+    assert(get(cb,'b')==1);
+    check(cb,"[ 'b',1 ]");
+
+    add(cb, 'a');
+    next(it);
+    removeCurrent(it);
+
+    assert(get(cb,'b')==1);
+    assert(get(cb,'a')==0);
+    check(cb,"[ 'b',1 ]");
+
+    add(cb, 'a');
+    deleteCharBagIterator(it);
+    it = iterate(cb);
+    removeCurrent(it);
+
+    assert(get(cb,'a')==1);
+    assert(get(cb,'b')==0);
+    check(cb,"[ 'a',1 ]");
+
+    deleteCharBagIterator(it);
+    deleteCharBag(cb);
+
+
+    cout << "testRemoveCurrent - OK" << endl;
+
 }
 
 int main()
@@ -133,6 +243,9 @@ int main()
     testValid();
     testCurrentChar();
     testCurrentCount();
+
+    testRemove();
+    testRemoveCurrent();
 
     return 0;
 }

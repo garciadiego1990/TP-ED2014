@@ -52,3 +52,18 @@ char currentChar(CharBagIterator it);
 // Complejidad: O(1)
 int currentCount(CharBagIterator it);
 
+
+////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+
+// DEFENSA
+
+
+// Remueve una aparicion del caracter c del charbag
+// Complejidad: O(1)
+void remove(CharBag& cb, char c);
+
+
+// Remueve del charbag una aparicion del caracter actualmente apuntado por el iterador
+// Complejidad: O(1)
+void removeCurrent(CharBagIterator& it);

@@ -70,7 +70,6 @@ bool isLeaf(HuffmanTree &t)
 // Recorre el HuffmanTree, y cada vez que llega a una hoja agrega el bitChain correspondiente en el zipTable
 void recorrerHuffmanTree(HuffmanTree &t, BitChain &bc, ZipTable &zp)
 {
-
     if(isLeaf(t))
     {
         add(zp,t->c,bc);

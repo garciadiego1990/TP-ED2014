@@ -32,3 +32,19 @@ ELEM_TYPE getCurrentElement(ListIterator l);
 // Avanza al siguiente elemento apuntado por el iterador
 // Precondición: El next del elemento actual debe ser distinto de NULL
 ListIterator next(ListIterator &l);
+
+/////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+
+// DEFENSA
+
+// Borra de la lista "l" el elemento actual apuntado por el iterador "it"
+// Precondicion: "it" apunta a un nodo de "l"
+// Complejidad: O(1), si el elemento a borrar es el primero; O(n) si el elemento a borrar es otro (n = longitud de la lista)
+void removeCurrentElement(List &l, ListIterator &it);
+
+
+// Borra de la lista "l" el elemento "e"
+// Precondicion: "e" pertenece a "l"
+// Complejidad: O(1), si el elemento a borrar es el primero; O(n) si el elemento a borrar es otro (con n = longitud de la lista)
+void removeElement(List &l, ELEM_TYPE e);

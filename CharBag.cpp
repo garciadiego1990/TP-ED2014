@@ -131,3 +131,37 @@ string toString(CharBag c)
     deleteCharBagIterator(it);
     return sout.str();
 }
+
+//////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////
+
+// DEFENSA
+
+void remove(CharBag& cb, char c)
+{
+    if(cb->ocurrencias[(int)(unsigned char)c] > 0) // si hay al menos una ocurrencia del char
+    {
+        cb->cantElem--;
+        cb->ocurrencias[(int)(unsigned char)c]--; // disminuyo la cantidad de ocurrencias de ese char en 1
+        if(cb->ocurrencias[(int)(unsigned char)c] == 0) // si ahora no hay mas ocurrencias de ese char, tengo que borrarlo de la lista
+
+        {
+            removeElement(cb->elems,c); // lo borro
+        }
+    }
+}
+
+void removeCurrent(CharBagIterator& it)
+{
+    if(valid(it)) // si el iterador apunta a un elemento valido
+    {
+        it->ch->cantElem--;
+
+        it->ch->ocurrencias[(int)(unsigned char)getCurrentElement(it->iteratorL)]--; // disminuyo en 1 la cantidad de ocurrencias del char actual
+        if(currentCount(it) == 0) // si no hay mas ocurrencias de ese char, tengo que borrarlo
+        {
+            removeCurrentElement(it->ch->elems,it->iteratorL); // lo borro
+        }
+    }
+}
+

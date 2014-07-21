@@ -21,7 +21,7 @@
 
 1403393682 /home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/ZipTable.h
 
-1403649327 source:/home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/PriorityQueue.cpp
+1403871779 source:/home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/PriorityQueue.cpp
 	"PriorityQueue.h"
 	<iostream>
 	<sstream>
@@ -33,20 +33,68 @@
 	<fstream>
 	<ctype.h>
 
-1403648196 source:/home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/CharBag.cpp
+1403871845 source:/home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/CharBag.cpp
 	"CharBag.h"
 	"List.h"
 	<iostream>
 	<sstream>
 
-1403829223 source:/home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/HuffmanTree.cpp
+1404066570 source:/home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/HuffmanTree.cpp
 	"HuffmanTree.h"
 	<iostream>
 	<sstream>
 
-1403296911 source:/home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/List.cpp
+1403871698 source:/home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/List.cpp
 	"List.h"
 
 1403397309 /home/diego/Escritorio/TP- Compresor por Huffman/huffman-src/List.h
+	<iostream>
+
+1403652418 source:/home/diego/Escritorio/TP- Compresor por Huffman (copia)/huffman-src/HuffmanCoding.cpp
+	"CharBag.h"
+	"PriorityQueue.h"
+	"HuffmanTree.h"
+	"ZipTable.h"
+	<iostream>
+	<vector>
+	<fstream>
+
+1404830811 /home/diego/Escritorio/TP- Compresor por Huffman (copia)/huffman-src/CharBag.h
+	<string>
+
+1403648566 /home/diego/Escritorio/TP- Compresor por Huffman (copia)/huffman-src/PriorityQueue.h
+	"HuffmanTree.h"
+	<string>
+
+1403648157 /home/diego/Escritorio/TP- Compresor por Huffman (copia)/huffman-src/HuffmanTree.h
+	"ZipTable.h"
+	<string>
+
+1403393682 /home/diego/Escritorio/TP- Compresor por Huffman (copia)/huffman-src/ZipTable.h
+
+1404066570 source:/home/diego/Escritorio/TP- Compresor por Huffman (copia)/huffman-src/HuffmanTree.cpp
+	"HuffmanTree.h"
+	<iostream>
+	<sstream>
+
+1403871779 source:/home/diego/Escritorio/TP- Compresor por Huffman (copia)/huffman-src/PriorityQueue.cpp
+	"PriorityQueue.h"
+	<iostream>
+	<sstream>
+
+1403393653 source:/home/diego/Escritorio/TP- Compresor por Huffman (copia)/huffman-src/ZipTable.cpp
+	"ZipTable.h"
+	<iostream>
+	<vector>
+	<fstream>
+	<ctype.h>
+
+1404828185 source:/home/diego/Escritorio/TP- Compresor por Huffman (copia)/huffman-src/CharBag.cpp
+	"CharBag.h"
+	"List.h"
+	<iostream>
+	<sstream>
+
+1404828343 /home/diego/Escritorio/TP- Compresor por Huffman (copia)/huffman-src/List.h
 	<iostream>
 
